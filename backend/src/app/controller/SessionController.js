@@ -13,7 +13,7 @@ class SessionController{
       return res.status(400).json({ error: 'No ONG found with this ID' });
     }
 
-    return res.status(200).json({ ong });
+    return res.status(200).json(ong);
   }
 }
 

@@ -21,7 +21,7 @@ class IncidentController{
 
     res.header('X-Total-Count',  count['count(*)']);
 
-    return res.status(200).json({ incidents })
+    return res.status(200).json(incidents)
   }
 
   async show (req, res) {
@@ -30,7 +30,7 @@ class IncidentController{
       .select()
       .first();
 
-    return res.status(200).json({ incidents })
+    return res.status(200).json(incidents)
   }
 
   async store(req, res) {
@@ -44,7 +44,7 @@ class IncidentController{
       ong_id
     });
 
-    return res.status(200).json({ id });
+    return res.status(200).json(id);
   }
 
   async delete (req, res) {

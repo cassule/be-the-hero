@@ -5,7 +5,7 @@ class OngController{
   async index (req, res) {
     const ongs = await database('ongs').select('*');
 
-    return res.status(200).json({ ongs })
+    return res.status(200).json(ongs)
   }
 
   async show (req, res) {
@@ -14,7 +14,7 @@ class OngController{
       .select()
       .first();
 
-    return res.status(200).json({ ongs })
+    return res.status(200).json(ongs)
   }
 
   async store(req, res) {
@@ -31,7 +31,7 @@ class OngController{
       uf
     });
 
-    return res.status(200).json({ id });
+    return res.status(200).json(id);
   }
 }
 
