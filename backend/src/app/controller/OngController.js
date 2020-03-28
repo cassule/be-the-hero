@@ -1,4 +1,4 @@
-const crypto  = require('crypto');
+const generateUniqueId  = require('../../utils/generateUniqueId');
 const database = require('../../database/database');
 
 class OngController{
@@ -20,7 +20,7 @@ class OngController{
   async store(req, res) {
     const { name, email, whatsapp, city, uf } = req.body;
 
-    const id = crypto.randomBytes(4).toString('HEX');
+    const id = generateUniqueId();
 
     await database('ongs').insert({
       id,
@@ -31,7 +31,7 @@ class OngController{
       uf
     });
 
-    return res.status(200).json(id);
+    return res.status(200).json({ id });
   }
 }
 
